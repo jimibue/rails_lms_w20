@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "courses#index"
 
   resources :users
-  resources :courses
+  resources :courses do
+    resources :enrollments, only: [:index, :new, :create, :destroy]
+  end
 
   get "tacos", to: "tacos#index"
 end

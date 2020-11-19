@@ -1,0 +1,23 @@
+<h1>random things</h1>
+<h1>Users</h1>
+<%= link_to 'Add User', new_user_path %>
+<hr />
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.full_name, user %>
+    </li>
+<% end %>
+</ul>
+
+<h1>Courses</h1>
+<%= link_to 'Add Course', new_course_path %>
+<hr />
+<h2><%= @courses.length <= 0 ? "No Courses" : "" %></h2> 
+<ul>
+  <% @courses.each do |course| %>
+    <li>
+      <%= link_to course.name, course %>
+    </li>
+  <% end %>
+</ul>
