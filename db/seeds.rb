@@ -65,3 +65,8 @@ puts "seeded"
 puts Course.all.size # 3
 puts User.all.size # 30
 puts Enrollment.all.size #  3 * 10 = 30
+
+# q
+User.first.enrollments.first.course.name
+
+User.first = User.first.enrollments.first.user
